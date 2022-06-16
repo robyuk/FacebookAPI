@@ -7,7 +7,7 @@ def getgraph(token, id='me',fields=''):
   url=f"https://graph.facebook.com/v14.0/{id}?fields={fields}&access_token={token}"
   return requests.get(url).text
 
-#Must have a current session token
+#Must have a current session token.  Get this by creating a Graph app at developers.facebook.com, give the app the relevant permissions, then generate and copy the access token into an env variable, "token"
 token=os.getenv("token")
 
 #With id='me' and no fields, prints the User Name and ID
